@@ -1,3 +1,9 @@
+//************************************************
+// Zebrafish auto 2D segmentation & auto FPC
+// Written by Hideo Otsuna (HHMI Janelia inst.)
+// Oct 2023
+// 
+//**************************************************
 
 outline=1;
 measureFPC="Automatic";//"Manual"
