@@ -9,7 +9,7 @@ Algorithm and FIJI plugins developed by Hideo Otsuna.
 
 
 ## Startup
-[GUI](../Images/GUI.jpg)
+<img src="../Images/GUI.jpg" alt="GUI" width="700"/>
 
 Select menu: Plugins/Macros/Zebra_96well
 
