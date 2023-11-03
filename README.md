@@ -25,8 +25,7 @@ Select menu: Plugins/Macros/Zebra_96well
 • Total CSV save method: The program saves a .csv file one directory up from the "Image Dir." This .csv will contain measurement data such as "Sample name, Sum area, Averaged area, Sum brightness, Averaged brightness, Number of FPC" for all images.<br>
     - New CSV: Generates a new .csv named after the folder.<br>
     - Append to existing CSV: Appends the measurement data to an existing .csv named after the folder.
-Segmentation
 
-• sensitivity: A lower value will segment the zebrafish with a tighter border. A higher value allows more space around the zebrafish. If the segmentation results in a chopped zebrafish, adjust to a larger value.
+• Segmentation sensitivity: A lower value will segment the zebrafish with a tighter border. A higher value allows more space around the zebrafish. If the segmentation results in a chopped zebrafish, adjust to a larger value.
 
 • Export outline image: When enabled, this will output an image showing the outline of the segmented zebrafish.
