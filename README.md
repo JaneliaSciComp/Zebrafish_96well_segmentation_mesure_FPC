@@ -17,11 +17,11 @@ Select menu: Plugins/Macros/Zebra_96well
 
 • Image Dir: When unchecked, the program prompts you to specify the folder containing the 2D zebrafish images.
 
-• FPC measuring method:
-
-  • Automatic: This mode will automatically segment the fluorescent signals.
-  • Manual: This mode requires manual input for segmentation.
-  • None & segmentation only: Outputs only the segmented zebrafish images.
+• FPC measuring method:<br>
+     - Automatic: This mode will automatically segment the fluorescent signals.<br>
+     - Manual: This mode requires manual input for segmentation.<br>
+     - None & segmentation only: Outputs only the segmented zebrafish images.<be>
+  
 • Total CSV save method: The program saves a .csv file one directory up from the "Image Dir." This .csv will contain measurement data such as "Sample name, Sum area, Averaged area, Sum brightness, Averaged brightness, Number of FPC" for all images.
 
 • New CSV: Generates a new .csv named after the folder.
