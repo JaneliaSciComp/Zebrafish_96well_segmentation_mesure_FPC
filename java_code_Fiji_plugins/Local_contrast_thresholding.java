@@ -256,7 +256,7 @@ public class Local_contrast_thresholding implements PlugInFilter
 								
 								if(pix1<mingray)
 								ip2.set (xn1,yn1, 0);
-								else if(maxgray < pix1)
+								else if(maxgray <= pix1)
 								ip2.set (xn1,yn1, maxVAL);
 								else if(posipx < pix1)
 								ip2.set (xn1,yn1, maxVAL);
