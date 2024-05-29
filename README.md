@@ -4,7 +4,7 @@ Algorithm and FIJI plugins developed by Hideo Otsuna.
 This program is designed for automatic 2D segmentation of zebrafish in bright-field microscopy images. It also automatically segments fluorescent signals within the zebrafish, measuring both the signal pixel area and its brightness.
 
 ## Before starting
- 0. download .zip file from here [Zebrafish 96-well segmentation measure FPC release](https://github.com/JaneliaSciComp/Zebrafish_96well_segmentation_mesure_FPC/releases/tag/zebrafish). And unzip the file.
+ 0. Download .zip file from here [Zebrafish 96-well segmentation measure FPC release](https://github.com/JaneliaSciComp/Zebrafish_96well_segmentation_mesure_FPC/releases/tag/zebrafish). And unzip the file.
  1. Launch FIJI and ensure it's updated.
  2. Copy "Zebra_96well.ijm" to /Fiji.app/plugins/Macros/
  3. Place "Size_based_Noise_elimination.jar", "Gamma_samewindow_noswing.jar", and "Local_contrast_thresholding.jar" in /Fiji.app/plugins/
