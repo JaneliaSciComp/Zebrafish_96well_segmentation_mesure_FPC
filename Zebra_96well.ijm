@@ -113,7 +113,7 @@ setBatchMode(true);
 
 
 if(CSVsave=="New CSV"){
-	totalString="Sample,Sum area,Ave area,Sum bri.,Ave bri.,Num FPC"+"\n";
+	totalString="Sample,Sum area,Ave area,Sum bri.,Ave bri.,Num objects"+"\n";
 	File.saveString(totalString, savedir+dirname+".csv");
 }else{
 	totalString=File.openAsString(savedir+dirname+".csv");
@@ -190,23 +190,33 @@ for(iii=0; iii<list.length; iii++){
 		if(bitd==16)
 		maxsize=65535;
 		
-		if(dupAndSubBackArray[0]==true)
-		SegSensitivity=SegSensitivity+3;
+	//	setBatchMode(false);
+	//		updateDisplay();
+		//		aaa
+		
+	//	if(dupAndSubBackArray[0]==true)
+	//	SegSensitivity=SegSensitivity+3;
 		
 		thresholdDesition_maskArray= newArray(0,maxsize,10,SegSensitivity);
 		thresholdDesition(thresholdDesition_maskArray);
 		
-		if(dupAndSubBackArray[0]==true)
-		SegSensitivity=SegSensitivity-3;
+	//	if(dupAndSubBackArray[0]==true)
+	//	SegSensitivity=SegSensitivity-3;
 		
 		bestthreValue=thresholdDesition_maskArray[0];
 		
 		print(list[iii]+" bestthreValue; "+bestthreValue);
 		setThreshold(bestthreValue, maxsize);
+		
+	//	setBatchMode(false);
+	//	updateDisplay();
+	//	aaa
+		
 		run("Convert to Mask");
 		
 		run("Size based Noise elimination", "ignore=229 less=3");
 		run("Close-");
+		
 		run("Fill Holes");
 		run("Maximum...", "radius=15");
 		run("Minimum...", "radius=15");
@@ -215,7 +225,7 @@ for(iii=0; iii<list.length; iii++){
 		
 		//		setBatchMode(false);
 		//	updateDisplay();
-		//		aaa
+			//	aaa
 		
 		run("Set Measurements...", "area centroid center perimeter fit shape stack redirect=None decimal=2");
 		run("Analyze Particles...", "size="+minsize+"-Infinity show=[Count Masks] display clear");
@@ -576,6 +586,8 @@ function thresholdDesition (thresholdDesition_maskArray){
 	iskip=thresholdDesition_maskArray[2];
 	SegSensitivity=thresholdDesition_maskArray[3];
 	
+	print("SegSensitivity; "+SegSensitivity);
+	
 	histo=newArray(maxsize+1);
 	maxpx=0;
 	for(x=0; x<getWidth; x++){
@@ -608,16 +620,18 @@ function thresholdDesition (thresholdDesition_maskArray){
 		STDarray[i+1]=sqrt((sum)/iskip);
 		
 		//	if(STDarray[i+1]<10)
-		//		print(i+"_"+STDarray[i+1]);
+			//	print(i+"_"+STDarray[i+1]);
 		
 		if(sdtmax<STDarray[i+1]){
 			sdtmax=STDarray[i+1];
 			sdtmaxi=i+1;
-			//	print(i+"_"+STDarray[i+1]);
+		//		print(i+"; "+STDarray[i+1]);
 		}
 		
-		if(STDarray[i+1]<SegSensitivity && bestthreValue==0 && STDarray[i+1]>0)
-		bestthreValue=i+round(iskip/2);
+		if(STDarray[i+1]<SegSensitivity && bestthreValue==0 && STDarray[i+1]>0){
+			bestthreValue=i+round(iskip/2);
+			print("627 bestthreValue; "+bestthreValue+"  STDarray[i+1]; "+STDarray[i+1] );
+		}
 	}
 	
 	
